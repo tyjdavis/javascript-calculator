@@ -1,24 +1,59 @@
-let firstButton;
-let secondButton;
-let Memory  = "0";
-let current = "0";
-let Operation = 0;
-let MAXLENGTH = 30;
 
+//Number buttons
 
-function buttonClick (event) {
-  let click = event.target.textContent;
+function numberClick (event) {
+  let click = event.target;
   let calcInput = document.querySelector("#answer");
-  calcInput.textContent = click;
+  calcInput.textContent = calcInput.textContent + click.textContent;
+  let convertToInt = parseFloat(calcInput.textContent);
 }
 
-let numberButton = document.querySelectorAll('#numbers button');
-for (let i = 0; i < numberButton.length; i++) {
-numberButton[i].addEventListener('click', buttonClick);
+let numberButtons = document.querySelectorAll('#numbers button');
+for (let i = 0; i < numberButtons.length; i++) {
+numberButtons[i].addEventListener('click', numberClick);
 }
+
+
+//Operator buttons
+
+function operatorClick (event) {
+  let click = event.target
+  let calcInput = document.querySelector("#answer");
+  calcInput.textContent = calcInput.textContent + click.textContent;
+  let convertToInt = parseFloat(calcInput.textContent);
+}
+
+let operatorButtons = document.querySelectorAll('.operators button');
+for (let i = 0; i < operatorButtons.length; i++) {
+operatorButtons[i].addEventListener('click', operatorClick);
+}
+
+
+
+function addition (event) {
+  numberButtons
+
+}
+
+function subtraction () {
+
+}
+
+function multiply () {
+
+}
+
+function divide () {
+
+}
+
+
+
+
+//clear
 
 function clearScreen () {
-  let current = "0";
+  let current = '';
   let test = document.querySelector('#answer')
   test.textContent = current;
  }
@@ -28,8 +63,69 @@ clearButton.addEventListener('click', clearScreen);
 
 
 
-/*button.onclick = function () {
-	var inputVal1 = input1.value;
-	var inputVal2 = input2.value;
-	output.innerHTML = parseFloat(inputVal1) + parseFloat(inputVal2);
-}*/
+
+
+
+
+
+
+
+/*
+function numberClick (event) {
+//var result = document.getElementById("answer")
+let click = event.target.textContent;
+let calcInput = document.querySelector("#answer");
+calcInput.textContent = click;
+}
+
+function clear(){
+    numberClick.value=null;
+}
+
+function one(){
+    numberClick.value+=1;
+}
+function two(){
+    result.value+=2;
+}
+function three(){
+    result.value+=3;
+}
+function four(){
+    result.value+=4;
+}
+function five(){
+    result.value+=5;
+}
+function six(){
+    result.value+=6;
+}
+function seven(){
+    result.value+=7;
+}
+function eight(){
+    result.value+=8;
+}
+function nine(){
+    result.value+=9;
+}
+function zero(){
+    result.value+=0;
+}
+function sub(){
+    result.value+='-';
+}
+function add(){
+    result.value+='+';
+}
+function mul(){
+    result.value+='*';
+}
+function divide(){
+    result.value+='/';
+}
+function equal(){
+
+      result.value =eval(result.value);
+  }
+*/
