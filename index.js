@@ -6,6 +6,7 @@ function numberClick (event) {
   let calcInput = document.querySelector("#answer");
   calcInput.textContent = calcInput.textContent + click.textContent;
   let convertToInt = parseFloat(calcInput.textContent);
+  //console.log(convertToInt);
 }
 
 let numberButtons = document.querySelectorAll('#numbers button');
@@ -17,7 +18,7 @@ numberButtons[i].addEventListener('click', numberClick);
 //Operator buttons
 
 function operatorClick (event) {
-  let click = event.target
+  let click = event.target;
   let calcInput = document.querySelector("#answer");
   calcInput.textContent = calcInput.textContent + click.textContent;
   let convertToInt = parseFloat(calcInput.textContent);
@@ -30,8 +31,10 @@ operatorButtons[i].addEventListener('click', operatorClick);
 
 
 
-function addition (event) {
-  numberButtons
+
+//Operations
+
+function addition () {
 
 }
 
@@ -48,6 +51,21 @@ function divide () {
 }
 
 
+//Equals
+
+function equals () {
+  let click = event.target.textContent;
+  if (click === '=') {
+    let storeInArray = document.querySelector('#answer');
+    let makeArray = Array(storeInArray.textContent);
+    var arrayOfNumbers = makeArray.map(Number);
+    console.log(arrayOfNumbers);
+  }
+}
+
+let equalsButton = document.querySelector('.equals');
+equalsButton.addEventListener('click', equals);
+
 
 
 //clear
@@ -60,72 +78,3 @@ function clearScreen () {
 
 let clearButton = document.querySelector('.clear');
 clearButton.addEventListener('click', clearScreen);
-
-
-
-
-
-
-
-
-
-
-/*
-function numberClick (event) {
-//var result = document.getElementById("answer")
-let click = event.target.textContent;
-let calcInput = document.querySelector("#answer");
-calcInput.textContent = click;
-}
-
-function clear(){
-    numberClick.value=null;
-}
-
-function one(){
-    numberClick.value+=1;
-}
-function two(){
-    result.value+=2;
-}
-function three(){
-    result.value+=3;
-}
-function four(){
-    result.value+=4;
-}
-function five(){
-    result.value+=5;
-}
-function six(){
-    result.value+=6;
-}
-function seven(){
-    result.value+=7;
-}
-function eight(){
-    result.value+=8;
-}
-function nine(){
-    result.value+=9;
-}
-function zero(){
-    result.value+=0;
-}
-function sub(){
-    result.value+='-';
-}
-function add(){
-    result.value+='+';
-}
-function mul(){
-    result.value+='*';
-}
-function divide(){
-    result.value+='/';
-}
-function equal(){
-
-      result.value =eval(result.value);
-  }
-*/
