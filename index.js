@@ -1,12 +1,14 @@
 
-//Number buttons
+//When clicking on number button, it prints the number to the answer space and console.
 
 function numberClick (event) {
   let click = event.target;
-  let calcInput = document.querySelector("#answer");
-  calcInput.textContent = calcInput.textContent + click.textContent;
-  let convertToInt = parseFloat(calcInput.textContent);
-  //console.log(convertToInt);
+  let calcPrint = document.querySelector("#answer");
+  //calcInput.textContent = calcInput.textContent + click.textContent;
+  calcPrint.textContent = click.textContent;
+  let convertToInt = parseFloat(calcPrint.textContent);
+  //let makeArray = Array(convertToInt);
+  console.log(convertToInt);
 }
 
 let numberButtons = document.querySelectorAll('#numbers button');
@@ -15,13 +17,15 @@ numberButtons[i].addEventListener('click', numberClick);
 }
 
 
-//Operator buttons
+
+
+//When clicking operator button it prints the operator to the answer space and console.
 
 function operatorClick (event) {
   let click = event.target;
-  let calcInput = document.querySelector("#answer");
-  calcInput.textContent = calcInput.textContent + click.textContent;
-  let convertToInt = parseFloat(calcInput.textContent);
+  let operatorPrint = document.querySelector("#answer");
+  operatorPrint.textContent = click.textContent;
+  console.log(operatorPrint.textContent);
 }
 
 let operatorButtons = document.querySelectorAll('.operators button');
@@ -30,25 +34,6 @@ operatorButtons[i].addEventListener('click', operatorClick);
 }
 
 
-
-
-//Operations
-
-function addition () {
-
-}
-
-function subtraction () {
-
-}
-
-function multiply () {
-
-}
-
-function divide () {
-
-}
 
 
 //Equals
