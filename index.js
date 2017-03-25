@@ -6,14 +6,9 @@ let calculationArray = [];
 function numberClick (event) {
   let click = event.target;
   let calcPrint = document.querySelector("#answer");
-  //calcInput.textContent = calcInput.textContent + click.textContent;
   calcPrint.textContent = click.textContent;
   let convertToInt = parseFloat(calcPrint.textContent);
-  //let makeArray = Array(convertToInt);
-
-  //maybe need a for loop?
-  calculationArray[0] = convertToInt;
-
+  calculationArray[calculationArray.length] = convertToInt;
   console.log(calculationArray);
 }
 
@@ -31,8 +26,10 @@ function operatorClick (event) {
   let click = event.target;
   let operatorPrint = document.querySelector("#answer");
   operatorPrint.textContent = click.textContent;
-  console.log(operatorPrint.textContent);
+  calculationArray[calculationArray.length] = operatorPrint.textContent;
+  console.log(calculationArray);
 }
+
 
 let operatorButtons = document.querySelectorAll('.operators button');
 for (let i = 0; i < operatorButtons.length; i++) {
@@ -44,14 +41,22 @@ operatorButtons[i].addEventListener('click', operatorClick);
 
 //Equals
 
-function equals () {
-  let click = event.target.textContent;
-  if (click === '=') {
+//when pressing equals button, do operation of the array.
+
+function equals (event) {
+    let click = event.target;
     let storeInArray = document.querySelector('#answer');
-    let makeArray = Array(storeInArray.textContent);
-    var arrayOfNumbers = makeArray.map(Number);
-    console.log(arrayOfNumbers);
-  }
+    calculationArray = 
+
+    storeInArray.textContent = click.textContent;
+    calculationArray[calculationArray.length] = storeInArray.textContent;
+
+    //calculationArray[calculationArray.length];
+
+    //let makeArray = Array(storeInArray.textContent);
+    //var arrayOfNumbers = makeArray.map(Number);
+    console.log(storeInArray);
+
 }
 
 let equalsButton = document.querySelector('.equals');
