@@ -127,7 +127,7 @@ button.clear {
   margin-top: 2vh;
 }
 
-.numbers {
+#numbers {
   width: 43.5vh;
   float: left;
   padding-left: 1vh;
