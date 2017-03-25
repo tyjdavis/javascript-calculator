@@ -46,16 +46,24 @@ operatorButtons[i].addEventListener('click', operatorClick);
 function equals (event) {
     let click = event.target;
     let storeInArray = document.querySelector('#answer');
-    calculationArray = 
-
-    storeInArray.textContent = click.textContent;
-    calculationArray[calculationArray.length] = storeInArray.textContent;
-
-    //calculationArray[calculationArray.length];
-
-    //let makeArray = Array(storeInArray.textContent);
-    //var arrayOfNumbers = makeArray.map(Number);
-    console.log(storeInArray);
+    let ans;
+    for (let i = 0; i < calculationArray.length; i++) {
+      let iteration = calculationArray[i];
+      if (iteration === "+" && isNaN(iteration)) {
+        ans = calculationArray[i-1] + calculationArray[i+1];
+      }
+      else if (iteration === "-") {
+       ans = calculationArray[i-1] - calculationArray[i+1];
+      }
+      else if (iteration === "x") {
+        ans = calculationArray[i-1] * calculationArray[i+1];
+      }
+      else if (iteration === "/") {
+        ans = calculationArray[i-1] / calculationArray[i+1];
+      }
+    }
+    storeInArray.textContent = ans;
+    console.log(ans);
 
 }
 
@@ -70,6 +78,7 @@ function clearScreen () {
   let current = '';
   let test = document.querySelector('#answer')
   test.textContent = current;
+  calculationArray = [];
  }
 
 let clearButton = document.querySelector('.clear');
