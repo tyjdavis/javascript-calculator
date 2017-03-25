@@ -1,6 +1,8 @@
 
 //When clicking on number button, it prints the number to the answer space and console.
 
+let calculationArray = [];
+
 function numberClick (event) {
   let click = event.target;
   let calcPrint = document.querySelector("#answer");
@@ -8,7 +10,11 @@ function numberClick (event) {
   calcPrint.textContent = click.textContent;
   let convertToInt = parseFloat(calcPrint.textContent);
   //let makeArray = Array(convertToInt);
-  console.log(convertToInt);
+
+  //maybe need a for loop?
+  calculationArray[0] = convertToInt;
+
+  console.log(calculationArray);
 }
 
 let numberButtons = document.querySelectorAll('#numbers button');
