@@ -18,8 +18,6 @@ numberButtons[i].addEventListener('click', numberClick);
 }
 
 
-
-
 //When clicking operator button it prints the operator to the answer space and console.
 
 function operatorClick (event) {
@@ -37,39 +35,35 @@ operatorButtons[i].addEventListener('click', operatorClick);
 }
 
 
-
-
 //Equals
 
 //when pressing equals button, do operation of the array.
+let answer = 0;
 
 function equals (event) {
     let click = event.target;
     let storeInArray = document.querySelector('#answer');
-    let ans;
     for (let i = 0; i < calculationArray.length; i++) {
       let iteration = calculationArray[i];
-      if (iteration === "+" && isNaN(iteration)) {
-        ans = calculationArray[i-1] + calculationArray[i+1];
+      if (iteration === "+") {
+        answer = calculationArray[i-1] + calculationArray[i+1];
       }
       else if (iteration === "-") {
-       ans = calculationArray[i-1] - calculationArray[i+1];
+       answer = calculationArray[i-1] - calculationArray[i+1];
       }
       else if (iteration === "x") {
-        ans = calculationArray[i-1] * calculationArray[i+1];
+        answer = calculationArray[i-1] * calculationArray[i+1];
       }
       else if (iteration === "/") {
-        ans = calculationArray[i-1] / calculationArray[i+1];
+        answer = calculationArray[i-1] / calculationArray[i+1];
       }
     }
-    storeInArray.textContent = ans;
-    console.log(ans);
-
+    storeInArray.textContent = answer;
+    console.log(answer);
 }
 
 let equalsButton = document.querySelector('.equals');
 equalsButton.addEventListener('click', equals);
-
 
 
 //clear
