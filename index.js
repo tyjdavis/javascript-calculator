@@ -42,7 +42,7 @@ let answer = 0;
 
 function equals (event) {
     let click = event.target;
-    let storeInArray = document.querySelector('#answer');
+    let equalsPrint = document.querySelector('#answer');
     for (let i = 0; i < calculationArray.length; i++) {
       let iteration = calculationArray[i];
       if (iteration === "+") {
@@ -58,7 +58,7 @@ function equals (event) {
         answer = calculationArray[i-1] / calculationArray[i+1];
       }
     }
-    storeInArray.textContent = answer;
+    equalsPrint.textContent = answer;
     console.log(answer);
 }
 
