@@ -1,4 +1,6 @@
 
+//Number Buttons
+
 //When clicking on number button, it prints the number to the answer space and console.
 
 let calculationArray = [];
@@ -18,6 +20,8 @@ numberButtons[i].addEventListener('click', numberClick);
 }
 
 
+//operator Buttons
+
 //When clicking operator button it prints the operator to the answer space and console.
 
 function operatorClick (event) {
@@ -35,9 +39,10 @@ operatorButtons[i].addEventListener('click', operatorClick);
 }
 
 
-//Equals
+//Equals Button
 
 //when pressing equals button, do operation of the array.
+
 let answer = 0;
 
 function equals (event) {
@@ -66,7 +71,7 @@ let equalsButton = document.querySelector('.equals');
 equalsButton.addEventListener('click', equals);
 
 
-//clear
+//Clear button
 
 function clearScreen () {
   let current = '';
